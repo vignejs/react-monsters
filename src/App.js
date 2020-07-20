@@ -7,21 +7,21 @@ import { CardList } from "./components/CardList";
 import { SearchBox } from "./components/SearchBox";
 
 const App = () => {
-    const [monsters, setMonsters] = useState([]);
+    const [robots, setRobots] = useState([]);
     const [searchField, setSearchField] = useState("");
 
     const onSearchChange = (event) => {
         setSearchField(event.target.value);
     };
 
-    const filteredMonsters = monsters.filter((monster) =>
-        monster.name.toLowerCase().includes(searchField.toLowerCase())
+    const filteredRobots = robots.filter((robot) =>
+        robot.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users")
             .then((response) => response.json())
-            .then((monsters) => setMonsters(monsters));
+            .then((robots) => setRobots(robots));
     }, []);
 
     return (
@@ -33,7 +33,7 @@ const App = () => {
                 Robots
             </h1>
             <SearchBox onSearchChange={onSearchChange} />
-            <CardList monsters={filteredMonsters} />
+            <CardList robots={filteredRobots} />
         </div>
     );
 };

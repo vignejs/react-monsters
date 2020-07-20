@@ -11,18 +11,18 @@ export const Card = (props) => (
     >
         <img
             css={tw`rounded-full shadow-xl bg-gray-300 mx-auto mb-5`}
-            alt="monster"
-            src={`https://robohash.org/${props.monster.name}?set=set1&size=150x150`}
+            alt="robot"
+            src={`https://robohash.org/${props.robot.name}?set=set1&size=150x150`}
         />
         <h2 css={tw`text-gray-900 font-semibold text-lg`}>
-            {props.monster.name}
+            {props.robot.name}
         </h2>
-        <p css={tw`text-gray-700`}> {props.monster.email} </p>
+        <p css={tw`text-gray-700`}> {props.robot.email} </p>
         <a
-            href={props.monster.website}
+            href={props.robot.website}
             css={tw`text-gray-700 hover:text-purple-900`}
         >
-            {props.monster.website}
+            {props.robot.website}
         </a>
     </div>
 );
